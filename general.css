@@ -1,0 +1,99 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 
+Medium: 
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 
+For the big text: 
+MEDUIM: 
+paragraph Default:
+
+- LETTER SPACING
+
+
+
+
+--- 02 COLORS
+
+  background-color: #e7f5ff; In hero section
+
+- Primary:  
+- Tints : 
+
+
+- Shades:
+
+- Accents: 
+- Greys:
+
+
+  color: #bbb;
+  color: #555;
+  color: #333;
+
+
+
+--- 04 Images
+- From unsplash
+- From UI Faces
+
+
+--- 03 Icons
+
+
+--- 05 SHADOWS
+
+
+
+--- 06 BORDER-RADIUS
+
+-- we didn't use rem because we didn't want this to change even in small screens
+DEFAULT: 
+
+--- 07 WHITESPACE
+
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  /* if we set it to overflow without x, there won't be scrolling at all */
+  overflow-x: hidden;
+
+  /* THis scrolling behavior you should put it in html element */
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  color: #555;
+  /* That mean all the elements that overflow the view port in the x-axis, so horizontally will simply be hidden */
+  /* We need also to overflow in html also and set position:relative; to the header section */
+  overflow-x: hidden;
+}
+.container {
+  margin: 9.6rem auto;
+  max-width: 120rem;
+  padding: 0 3.2rem;
+}
+.margin-top-md {
+  margin-top: 2.4rem;
+}

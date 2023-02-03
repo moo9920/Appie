@@ -1,0 +1,390 @@
+@media (max-width: 44em) {
+  .btn-mobile-nav {
+    display: block;
+    /* z-index: 99; */
+  }
+  .header-text-box-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* We used webkit because we want to work also in safari browser. you check in caniuse.com if the property work in all browsers or not */
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* using transform is better than using left position */
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* all: which property we want to animate. 0.5s: duration.   the type of the animation and by default the transition is linear but
+     we can also specify a transition curve
+      */
+    transition: all 0.5s ease-in;
+    /* transition: all 0.5s ease-out; */
+    /* transition: all 0.5s ease-in-out; */
+    /* transition: all 0.5s ease; */
+
+    /* Hidden */
+    /* Allows No transition at all. So, display none not the currect way to hide the navigation bar */
+    /* display: none; */
+
+    /* The steps below is the currectn way of hiding an element without using display:none; . */
+    /* We used opacity to hide it */
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboars */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers  */
+    visibility: hidden;
+  }
+  /* When we want to open the navigaation we need to set all of that back to normal */
+  .open-nav .header-text-box-box {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  /* We can use display here because we donn't need any animationes here:  */
+  /* When the nav opened than display the close icon to block */
+  .open-nav .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .open-nav .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+  .header-text-box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    gap: 4.8rem;
+  }
+
+  /* ********************************************* */
+  /* Out side the nav */
+  html {
+    font-size: 43.75%;
+  }
+
+  .hero-section {
+    padding: 2.4rem 0 16rem 4.8rem;
+    position: relative;
+    z-index: -1;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .hero-image {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .hero-big-text {
+    /* font-size: 2.4rem; */
+  }
+  .hero-small-text {
+    /* font-size: 1.2rem; */
+  }
+  .cta-form {
+    width: 56rem;
+  }
+  .email {
+    width: 48rem;
+  }
+  .header-logo {
+    width: 100%;
+  }
+  .header-btn {
+    font-size: 1.8rem;
+    width: 14rem;
+  }
+  /* ************************************************ */
+  /*              Wow it works SECTION                   */
+  /* ************************************************ */
+  .how-it-works-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  .how-it-works-btn {
+    position: static;
+    right: none;
+    top: none;
+    grid-row: 2/3;
+    justify-self: center;
+  }
+  .how-it-works-bigtext {
+    text-align: center;
+  }
+  .how-it-works-features-boxes {
+    grid-template-columns: 1fr;
+  }
+  .feature-box {
+    align-items: center;
+    padding: 2.4rem 4.8rem;
+  }
+  .feature-tex {
+    font-size: 2.4rem;
+  }
+
+  /* ************************************************ */
+  /*              Marketing SECTION                   */
+  /* ************************************************ */
+  .marketing-section {
+    padding: 0.2rem 1.2rem;
+    width: 60rem;
+    margin: 6.4rem auto;
+  }
+  .marketing-container {
+  }
+
+  .marketing-img {
+    display: none;
+  }
+
+  /* ************************************************ */
+  /*              wherever SECTION                   */
+  /* ************************************************ */
+  .wherever-box {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+  }
+  /* ************************************************ */
+  /*              How it works 2 SECTION                   */
+  /* ************************************************ */
+
+  .how-it-works-bigtext--2 {
+    text-align: center;
+  }
+  .how-it-works-smalltext--2 {
+    text-align: center;
+  }
+  .how-2-boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+  }
+  .how-2-box {
+    display: flex;
+    flex-direction: column;
+    width: 44rem;
+    height: 22rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .how-2-number {
+    font-size: 2.8rem;
+  }
+  .how-2-text {
+    font-size: 1.4rem;
+  }
+  .video-part {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40rem 20rem 30rem;
+  }
+  .after-video-left-right-box {
+    display: none;
+  }
+  .video-part--1 {
+    margin: 0rem;
+  }
+  .video--1 {
+    width: 100%;
+  }
+  .video--2 {
+    height: 150%;
+    width: 100%;
+  }
+  .after-video {
+    padding-left: 0;
+    grid-row: 2/3;
+    margin: 0;
+    padding: 0;
+  }
+  .after-video-bigtext {
+    font-size: 2.8rem;
+  }
+
+  /* ************************************************ */
+  /*              Download SECTION                   */
+  /* ************************************************ */
+  .download-section {
+    grid-template-columns: 1fr 2fr;
+    padding: 0.8rem 3.2rem;
+  }
+  .apple-store-box {
+    width: 15.5em;
+  }
+  .download-bigtext {
+    font-size: 3.2rem;
+  }
+  /* ************************************************ */
+  /*              Pricing SECTION                   */
+  /* ************************************************ */
+  .pricing-slices {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+  /* ************************************************ */
+  /*              Testimonial SECTION                   */
+  /* ************************************************ */
+  .testimonial-section {
+    height: 50rem;
+  }
+  .big-box {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .testimonial-personal-img {
+    width: 35%;
+  }
+  .testimonial-tex {
+    font-size: 1.8rem;
+  }
+  .personal-name,
+  .personal-job {
+    text-align: center;
+  }
+  .after-video-left-right-box--2 {
+    display: none;
+  }
+  /* ************************************************ */
+  /*              Platforms SECTION                   */
+  /* ************************************************ */
+
+  .platforms-bigtext {
+    padding: 0 2.4rem;
+  }
+  /* .platfomrs-sponsers-box img{
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+  .platforms-sponsers-firstline {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .platforms-sponsers-secondline {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 12rem;
+    justify-content: center;
+    gap: 3.6rem;
+  }
+  .platforms-sponsers-secondline:last-child {
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+  }
+  .disapper {
+    display: block;
+    width: 0;
+    height: 0;
+  }
+  /* ************************************** */
+  /*           FOOTER SEction               */
+
+  .grid--footer {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  .footer-logo {
+    text-align: center;
+  }
+  .text-under-logo-footer p {
+    text-align: center;
+  }
+  .text-under-logo-footer {
+    text-align: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .footer-heading {
+    text-align: center;
+  }
+  .footer-nav {
+    align-items: center;
+  }
+  .footer-link {
+    text-align: center;
+  }
+  .contacts-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .location-footer {
+    width: auto;
+  }
+  .footer-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+  .store-box {
+    gap: 1.4rem;
+  }
+}
+
+/* ************************************************ */
+/*              Fixing safari flexbox gap                   */
+/* I didn't write this code, jonas saied copiet and past it in every web you use, and there is also some code in javascript file */
+/* ************************************************ */
+/* This won't work because jonas used this for omnifood project */
+/* and maybe after I while safari will support flexbox gap and we no longer need to write this */
+/* .no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+} */
